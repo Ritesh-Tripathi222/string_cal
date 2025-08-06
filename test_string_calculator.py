@@ -24,3 +24,8 @@ def test_add_new_lines():
 def test_add_with_custom_delimiter():
     calculator = StringCalculator()
     assert calculator.add("//;\n1;2") == 3
+
+def test_add_negative_number_throws_exception():
+    calculator = StringCalculator()
+    with pytest.raises(ValueError, match=r"negative numbers not allowed -1"):
+        calculator.add("-1")
