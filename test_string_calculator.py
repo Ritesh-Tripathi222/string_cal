@@ -29,3 +29,8 @@ def test_add_negative_number_throws_exception():
     calculator = StringCalculator()
     with pytest.raises(ValueError, match=r"negative numbers not allowed -1"):
         calculator.add("-1")
+
+def test_add_multiple_negative_numbers_throws_exception():
+    calculator = StringCalculator()
+    with pytest.raises(ValueError, match=r"negative numbers not allowed -1,-2,-3"):
+        calculator.add("-1,-2,-3")
